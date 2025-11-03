@@ -9,8 +9,8 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
 buffer = io.StringIO()
-df = pd.read_csv(f".\\train.csv")
-df_test = pd.read_csv(f".\\test.csv")
+df = pd.read_csv(f"./train.csv")
+df_test = pd.read_csv(f"./test.csv")
 st.title("Loan Payback Prediction App")
 
 code = ['''
@@ -200,7 +200,7 @@ st.subheader("เลือกใช้ XGBOOST MODEL กับ LGBM คู่ก
 st.write("สอง model นี้คล้ายกันแต่ LGBM บางทีเห็น inside ข้อมูลได้ดีกว่าในบางจุด")
 st.code(code[15] , language="python")
 
-oof_predict = pd.read_csv(".\\oof_predictions.csv")
+oof_predict = pd.read_csv("./oof_predictions.csv")
 oof_preds = oof_predict["oof_pred"].values
 Y = oof_predict["true_label"].values 
 fpr, tpr, _ = roc_curve(Y, oof_preds) # ใช้เพื่อ คำนวณ True Positive Rate (TPR) และ False Positive Rate (FPR) สำหรับ threshold ต่าง ๆ
