@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
 import io
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -10,8 +9,6 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
 buffer = io.StringIO()
-xgb_model = joblib.load("xgb_model.pkl")
-lgb_model = joblib.load("lgb_model.pkl")
 df = pd.read_csv(f".\\train.csv")
 df_test = pd.read_csv(f".\\test.csv")
 st.title("Loan Payback Prediction App")
