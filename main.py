@@ -221,3 +221,6 @@ st.pyplot(fig)
 report = classification_report(Y, (oof_preds > 0.5).astype(int), output_dict=True)
 st.subheader("Classification Report")
 st.dataframe(pd.DataFrame(report).transpose())
+
+st.image("score.png", caption="Kaggle Score board", use_column_width=True)
+st.markdown("[KAGGLE Competitions](https://www.kaggle.com/code/kapaopu/loanpredict)")
